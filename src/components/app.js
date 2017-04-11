@@ -24,6 +24,11 @@ export class App extends Component {
         <div className={message ? 'message visible' : 'message'}>
           {message}
         </div>
+        <div className="footer">
+          <div className="wrapper">
+            <p>Created by <a href="https://github.com/GuRuGuMaWaRu" target="_blank">GuRuGuMaWaRu</a>, 2017.</p>
+          </div>
+        </div>
       </div>
     );
   }

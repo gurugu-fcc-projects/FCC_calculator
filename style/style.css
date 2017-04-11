@@ -14,7 +14,7 @@ body {
 
 .display {
   background-color: #fff;
-  height: 300px; max-width: 500px;
+  max-height: 300px; max-width: 500px;
   margin: 0 auto;
   text-align: right;
   display: flex;
@@ -103,6 +103,7 @@ body {
 }
 
 .keypad-key {
+  background-color: hsla(220, 86%, 95%, 1);
   width: 25%;
   line-height: 32px;
   font-size: 1.2em;
@@ -121,10 +122,6 @@ body {
 }
 
 .keypad-key:active {
-  background-color: hsla(220, 90%, 84%, 1);
-}
-
-.keypad-key-active {
   background-color: hsla(220, 90%, 84%, 1);
 }
 
@@ -157,6 +154,45 @@ body {
 .yellow {
   background-color: yellow;
   color: red;
+}
+
+/*==============================================*/
+/* FOOTER
+/*==============================================*/
+
+.footer {
+  background-color: hsla(125, 56%, 50%, 1);
+  background-color: hsla(210, 63%, 90%, 1);
+  height: 25px;
+  width: 100%;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+  line-height: 25px;
+}
+
+/*==============================================*/
+/* FIXED FOOTER
+/*==============================================*/
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  min-height: 100%;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 /*==============================================*/
@@ -278,6 +314,9 @@ body {
 /*==============================================*/
 
 @media (min-width: 175px) {
+  .display {
+    height: 134px;
+  }
   .keypad-key {
     line-height: 40px;
     font-size: 1.2em;
@@ -376,6 +415,9 @@ body {
 }
 
 @media (min-width: 500px) {
+  .display {
+    height: 200px;
+  }
   .keypad-delete {
     min-width: 50px; min-height: 60px;
     line-height: 60px;
@@ -400,5 +442,23 @@ body {
   }
   .size-small {
     font-size: 1.0em;
+  }
+}
+
+@media (min-width: 700px) {
+  .display {
+    height: 250px;
+  }
+}
+
+@media (hover: none) {
+  .keypad-key {
+    background-color: hsla(220, 86%, 95%, 1);
+  }
+  .outer-row {
+    background-color: hsla(220, 70%, 93%, 1);
+  }
+  .equality {
+    background-color: hsla(125, 60%, 60%, 1);
   }
 }

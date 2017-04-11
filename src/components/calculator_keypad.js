@@ -75,7 +75,6 @@ export class CalculatorKeypad extends Component {
         <div className='keypad-main'>
           { keypad }
         </div>
-        <span className="ripple"></span>
       </div>
     );
   }
