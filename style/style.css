@@ -449,3 +449,38 @@ body {
     height: 250px;
   }
 }
+
+@media (orientation: landscape) {
+  .display {
+    height: 90px;
+  }
+  .keypad-delete {
+    min-width: 30px; min-height: 30px;
+    line-height: 30px;
+    font-size: 1.2em;
+  }
+  .display-input {
+    margin-bottom: 10px;
+  }
+  .display-result {
+    height: 20px;
+    font-size: 1.2em;
+    margin-bottom: .6em;
+  }
+  .keypad-key {
+    line-height: 40px;
+    font-size: 1.2em;
+  }
+  .size-large {
+    font-size: 1.0em;
+  }
+  .size-medium {
+    font-size: 0.8em;
+  }
+  .size-small {
+    font-size: 0.6em;
+  }
+  .footer {
+    display: none;
+  }
+}
