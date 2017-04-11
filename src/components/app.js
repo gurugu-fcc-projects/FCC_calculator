@@ -4,12 +4,14 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import CalculatorDisplay from './calculator_display';
 import CalculatorKeypad from './calculator_keypad';
+import touchOrMouse from '../utils/touchOrMouse';
 import '../../style/style.css';
 
 export class App extends Component {
   render() {
     const message = this.props.message;
 
+    touchOrMouse();
     // hide message, if present
     if (message) {
       window.setTimeout(() => {

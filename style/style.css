@@ -120,35 +120,39 @@ body {
 .keypad-key:hover {
   background-color: hsla(220, 95%, 88%, 1);
 }
-
 .keypad-key:active {
   background-color: hsla(220, 90%, 84%, 1);
+}
+html.can-touch .keypad-key:hover {
+  background-color: none;
 }
 
 .outer-row {
   background-color: hsla(220, 70%, 93%, 1);
   color: hsla(220, 90%, 70%, 1);
 }
-
 .outer-row:hover {
   background-color: hsla(220, 68%, 90%, 1);
 }
-
 .outer-row:active {
   background-color: hsla(220, 66%, 87%, 1);
+}
+html.can-touch .outer-row:hover {
+  background-color: none;
 }
 
 .equality {
   background-color: hsla(125, 60%, 60%, 1);
   color: hsla(220, 100%, 100%, 1);
 }
-
 .equality:hover {
   background-color: hsla(125, 58%, 55%, 1);
 }
-
 .equality:active {
   background-color: hsla(125, 56%, 50%, 1);
+}
+html.can-touch .equality:hover {
+  background-color: none;
 }
 
 .yellow {
@@ -448,17 +452,5 @@ body {
 @media (min-width: 700px) {
   .display {
     height: 250px;
-  }
-}
-
-@media (hover: none) {
-  .keypad-key {
-    background-color: hsla(220, 86%, 95%, 1);
-  }
-  .outer-row {
-    background-color: hsla(220, 70%, 93%, 1);
-  }
-  .equality {
-    background-color: hsla(125, 60%, 60%, 1);
   }
 }
