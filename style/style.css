@@ -1,0 +1,404 @@
+body {
+  background-color: hsla(220, 86%, 95%, 1);
+  color: hsla(220, 86%, 20%, 1);
+}
+
+.container {
+  min-width: 100%;
+  padding: 0;
+}
+
+/*==============================================*/
+/* DISPLAY
+/*==============================================*/
+
+.display {
+  background-color: #fff;
+  height: 300px; max-width: 500px;
+  margin: 0 auto;
+  text-align: right;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.display-input {
+  display: block;
+  overflow: auto;
+  overflow-wrap: break-word;
+  margin-bottom: 20px;
+  font-size: 2em;
+  transition: font-size 0.5s;
+}
+
+.display-result {
+  color: #aaa;
+  height: 35px;
+  margin-bottom: .8em;
+  font-size: 0.8em;
+}
+
+.padding {
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+.operator {
+  color: hsla(220, 90%, 70%, 1);
+}
+
+.size-large {
+  font-size: 0.6em;
+  transition: font-size 0.1s;
+}
+
+.size-medium {
+  font-size: 0.5em;
+  transition: font-size 0.1s;
+}
+
+.size-small {
+  font-size: 0.4em;
+  transition: font-size 0.1s;
+}
+
+/*==============================================*/
+/* KEYPAD
+/*==============================================*/
+
+.keypad-additional {
+  background-color: #fff;
+  color: hsla(220, 26%, 70%, 1);
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  transition: color .2s;
+}
+
+.keypad-additional:hover {
+  color: hsla(220, 26%, 50%, 1);
+}
+
+.keypad-additional:active {
+  color: hsla(220, 26%, 20%, 1);
+}
+
+.keypad-delete {
+  min-width: 35px; min-height: 42px;
+  line-height: 42px;
+  font-size: 1em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.keypad-main {
+  background-color: hsla(220, 86%, 95%, 1);
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.keypad-key {
+  width: 25%;
+  line-height: 32px;
+  font-size: 1.2em;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  transition: background-color .2s;
+}
+
+.keypad-key:hover {
+  background-color: hsla(220, 95%, 88%, 1);
+}
+
+.keypad-key:active {
+  background-color: hsla(220, 90%, 84%, 1);
+}
+
+.keypad-key-active {
+  background-color: hsla(220, 90%, 84%, 1);
+}
+
+.outer-row {
+  background-color: hsla(220, 70%, 93%, 1);
+  color: hsla(220, 90%, 70%, 1);
+}
+
+.outer-row:hover {
+  background-color: hsla(220, 68%, 90%, 1);
+}
+
+.outer-row:active {
+  background-color: hsla(220, 66%, 87%, 1);
+}
+
+.equality {
+  background-color: hsla(125, 60%, 60%, 1);
+  color: hsla(220, 100%, 100%, 1);
+}
+
+.equality:hover {
+  background-color: hsla(125, 58%, 55%, 1);
+}
+
+.equality:active {
+  background-color: hsla(125, 56%, 50%, 1);
+}
+
+.yellow {
+  background-color: yellow;
+  color: red;
+}
+
+/*==============================================*/
+/* MESSAGE
+/*==============================================*/
+
+.message {
+  color: #fff;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 10px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+/*==============================================*/
+/* HELPER CLASSES
+/*==============================================*/
+
+.visible {
+  opacity: 1;
+}
+
+.unselectable {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+/*==============================================*/
+/* RIPPLE EFFECT
+/*==============================================*/
+
+[data-rippleEffect="button"] {
+  overflow: hidden;
+  position: relative;
+}
+
+[data-rippleEffect="display"] {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Ripple Effect style (background, border-radius, time) */
+[data-rippleEffect="effect"] {
+  animation: rippleEffect 600ms forwards;
+  -moz-animation: rippleEffect 600ms forwards;
+  -o-animation: rippleEffect 600ms forwards;
+  -webkit-animation: rippleEffect 600ms forwards;
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 100%;
+  position: absolute;
+}
+
+[data-rippleEffect="effectClear"] {
+  animation: rippleEffect 600ms forwards;
+  -moz-animation: rippleEffect 600ms forwards;
+  -o-animation: rippleEffect 600ms forwards;
+  -webkit-animation: rippleEffect 600ms forwards;
+  background-color: rgba(250,250,250,1);
+  border-radius: 100%;
+  position: absolute;
+}
+
+/* Effect animation */
+@-webkit-keyframes rippleEffect {
+  0% {
+    transform: scale(0.0);
+    -moz-transform: scale(0.0);
+    -ms-transform: scale(0.0);
+    -o-transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: scale(2.0);
+    -moz-transform: scale(2.0);
+    -ms-transform: scale(2.0);
+    -o-transform: scale(2.0);
+    -webkit-transform: scale(2.0);
+    opacity: 0;
+  }
+}
+
+/* Effect animation */
+@keyframes rippleEffect {
+    0% {
+        transform: scale(0.0);
+        -moz-transform: scale(0.0);
+        -ms-transform: scale(0.0);
+        -o-transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.0);
+        -moz-transform: scale(1.0);
+        -ms-transform: scale(1.0);
+        -o-transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/*==============================================*/
+/* MEDIA QUERIES
+/*==============================================*/
+
+@media (min-width: 175px) {
+  .keypad-key {
+    line-height: 40px;
+    font-size: 1.2em;
+  }
+}
+
+@media (min-width: 212px) {
+  .keypad-key {
+    line-height: 50px;
+    font-size: 1.4em;
+  }
+  .display-result {
+    font-size: 1.0em;
+  }
+  .size-large {
+    font-size: 0.9em;
+  }
+  .size-medium {
+    font-size: 0.7em;
+  }
+  .size-small {
+    font-size: 0.5em;
+  }
+}
+
+@media (min-width: 260px) {
+  .keypad-delete {
+    min-width: 45px; min-height: 52px;
+    line-height: 52px;
+    font-size: 1.2em;
+  }
+  .keypad-key {
+    line-height: 55px;
+    font-size: 1.6em;
+  }
+  .display-result {
+    font-size: 1.1em;
+  }
+  .size-large {
+    font-size: 1.0em;
+  }
+  .size-medium {
+    font-size: 0.8em;
+  }
+  .size-small {
+    font-size: 0.6em;
+  }
+}
+
+@media (min-width: 320px) {
+  .keypad-delete {
+    min-width: 50px; min-height: 60px;
+    line-height: 60px;
+    font-size: 1.5em;
+  }
+  .keypad-key {
+    line-height: 70px;
+    font-size: 1.8em;
+  }
+  .display-result {
+    font-size: 1.3em;
+  }
+  .size-large {
+    font-size: 1.1em;
+  }
+  .size-medium {
+    font-size: 0.9em;
+  }
+  .size-small {
+    font-size: 0.7em;
+  }
+}
+
+@media (min-width: 400px) {
+  .keypad-delete {
+    min-width: 50px; min-height: 60px;
+    line-height: 60px;
+    font-size: 1.6em;
+  }
+  .keypad-key {
+    line-height: 90px;
+    font-size: 2em;
+  }
+  .display-result {
+    font-size: 1.5em;
+  }
+  .size-large {
+    font-size: 1.3em;
+  }
+  .size-medium {
+    font-size: 1.1em;
+  }
+  .size-small {
+    font-size: 0.9em;
+  }
+}
+
+@media (min-width: 500px) {
+  .keypad-delete {
+    min-width: 50px; min-height: 60px;
+    line-height: 60px;
+    font-size: 1.7em;
+  }
+  .keypad-key {
+    line-height: 110px;
+    font-size: 2.2em;
+  }
+  .padding {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .display-result {
+    font-size: 1.6em;
+  }
+  .size-large {
+    font-size: 1.4em;
+  }
+  .size-medium {
+    font-size: 1.2em;
+  }
+  .size-small {
+    font-size: 1.0em;
+  }
+}
