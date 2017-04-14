@@ -199,6 +199,9 @@ body {
 /*==============================================*/
 
 .message {
+  position: absolute;
+  left: 0; right: 0; bottom: 50px;
+  z-index: 999;
   color: #fff;
   background-color: hsla(0, 0%, 0%, 0.5);
   max-width: 500px;
