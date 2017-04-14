@@ -12,7 +12,7 @@ import {
   ERROR_MESSAGE
 } from './types';
 
-function errorMessage(input, message) {
+const errorMessage = (input, message) => {
   return {
     type: ERROR_MESSAGE,
     payload: {
@@ -24,7 +24,7 @@ function errorMessage(input, message) {
   };
 }
 
-export function handleInput(parsedInput, currentInput) {
+export const handleInput = (parsedInput, currentInput) => {
   //=== check input
   const message = inputCheck(parsedInput, currentInput);
 
@@ -94,7 +94,7 @@ export function handleInput(parsedInput, currentInput) {
   }
 }
 
-export function hideMessage() {
+export const hideMessage = () => {
   return {
     type: HIDE_MESSAGE
   };

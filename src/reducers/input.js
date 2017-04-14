@@ -5,7 +5,14 @@ import {
   ERROR_MESSAGE
  } from '../actions/types';
 
-export default function(state = {parsed: '', display: '', result: '', message: ''}, action) {
+const INIT_STATE = {
+  parsed: '',
+  display: '',
+  result: '',
+  message: ''
+}
+
+export default function(state = INIT_STATE, action) {
   switch(action.type) {
     case ERROR_MESSAGE:
       return {
