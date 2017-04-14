@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import CalculatorDisplay from './calculator_display';
 import CalculatorKeypad from './calculator_keypad';
-import touchOrMouse from '../utils/touchOrMouse';
+import { touchOrMouse } from '../utils/touchOrMouse';
 import '../../style/style.css';
 
 export class App extends Component {
@@ -40,7 +40,7 @@ App.propTypes = {
   message: PropTypes.string,
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
     message: state.input.message,
   };

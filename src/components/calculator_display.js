@@ -5,7 +5,7 @@ export class CalculatorDisplay extends Component {
   render() {
     const { display, result } = this.props;
 
-    function prepareDisplay(input) {
+    const prepareDisplay = (input) => {
       if (input) {
         const inputToArray = Array.prototype.slice.call(display);
         let size;
@@ -48,7 +48,7 @@ CalculatorDisplay.propTypes = {
   result: PropTypes.string
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
     display: state.input.display,
     result: state.input.result

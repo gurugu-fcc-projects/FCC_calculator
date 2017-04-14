@@ -85,7 +85,7 @@ CalculatorKeypad.propTypes = {
   parsedInput: PropTypes.string
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return { parsedInput: state.input.parsed }
 }
 

@@ -1,19 +1,19 @@
-export default function touchOrMouse() {
+export const touchOrMouse = () => {
   var isTouch = false; //var to indicate current input type (is touch versus no touch)
   var isTouchTimer;
   var curRootClass = ''; //var indicating current document root class ("can-touch" or "")
 
-  function addtouchclass(e){
+  const addtouchclass = (e) => {
       clearTimeout(isTouchTimer)
       isTouch = true;
       if (curRootClass !== 'can-touch'){ //add "can-touch' class if it's not already present
           curRootClass = 'can-touch';
           document.documentElement.classList.add(curRootClass);
       }
-      isTouchTimer = setTimeout(function(){isTouch = false}, 1000); //maintain "istouch" state for 500ms so removetouchclass doesn't get fired immediately following a touch event
+      isTouchTimer = setTimeout(() => isTouch = false, 1000); //maintain "istouch" state for 500ms so removetouchclass doesn't get fired immediately following a touch event
   }
 
-  function removetouchclass(e){
+  const removetouchclass = (e) => {
       if (!isTouch && curRootClass === 'can-touch'){ //remove 'can-touch' class if not triggered by a touch event and class is present
           isTouch = false;
           curRootClass = '';
