@@ -100,7 +100,7 @@ export const calculateBracketedExpression = (input) => {
 
 export const calculationParser = (input) => {
   //=== resolve error status
-  if (!input) {
+  if (input === false) {
     return false;
   }
   if (input.length === 0) { // solve issue with empty input
