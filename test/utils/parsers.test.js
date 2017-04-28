@@ -144,7 +144,6 @@ describe('parseInput', () => {
   });
   it('does not allow leading operators', () => {
     expect(parseInput('', '+')).toEqual('');
-    expect(parseInput('', '-')).toEqual('');
     expect(parseInput('', '/')).toEqual('');
     expect(parseInput('', '*')).toEqual('');
   });

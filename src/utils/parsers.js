@@ -50,6 +50,9 @@ export const inputCheck = (previousInput, currentInput) => {
 }
 
 export const parseInput = (previousInput, currentInput) => {
+  console.log('previousInput', previousInput);
+  console.log('currentInput', currentInput);
+
   const handlers = [
     //=== '+/-' input
     {
@@ -88,11 +91,7 @@ export const parseInput = (previousInput, currentInput) => {
       test: /\b(\d+\.)(\d+)?(\.)/, //=== solve duplicate decimal dot issue
       convert: '$1$2'
     },
-    {
-      value: /[\/\+\-\*]/,
-      test: /^[\/\+\-\*]/, //=== solve leading operator issue
-      convert: ''
-    },
+    //=== operators (+ - / *)
     {
       value: /[\/\+\-\*]/,
       test: /[\/\+\-\*](?=[\/\+\-\*])/, //=== solve consecutive operators issue
@@ -100,9 +99,16 @@ export const parseInput = (previousInput, currentInput) => {
     },
     {
       value: /[\/\+\*]/,
+      test: /^[\/\+\-\*](?!\d)/, //=== solve leading operator issue
+      convert: ''
+
+    },
+    {
+      value: /[\/\+\*]/,
       test: /(\()[\/\+\*]/, //=== solve "(+", "(*", and "(/" issue
       convert: '$1'
     },
+    //=== brackets
     {
       value: /\(\)/,
       test: /^(\(+)?\)/, //=== solve leading brackets issue
@@ -118,7 +124,7 @@ export const parseInput = (previousInput, currentInput) => {
       test: /(\))(\d)/, //=== add multiplication operator before a number that follows closing bracket
       convert: '$1*$2'
     },
-    //=== percent handlers
+    //=== percents
     {
       value: /%/,
       test: /^%/, //=== forbid percent character as the first character
