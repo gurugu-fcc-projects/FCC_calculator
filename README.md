@@ -13,7 +13,7 @@ It was the hardest and longest project among all, even today. There were several
 ## Links
 
 - [ ] this project at codepen: [https://codepen.io/GuRuGu/full/KmPjqx/](https://codepen.io/GuRuGu/full/KmPjqx/)
-- [ ] this project at gh-pages: [https://gurugumawaru.github.io/FCC_calculator/](https://gurugumawaru.github.io/FCC_calculator/)
+- [ ] this project at gh-pages: [https://gurugu-fcc-projects.github.io/FCC_calculator/](https://gurugu-fcc-projects.github.io/FCC_calculator/)
 - [ ] freecodecamp challenge: [https://learn.freecodecamp.org/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator](https://learn.freecodecamp.org/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator)
 
 ## Video Walkthrough
